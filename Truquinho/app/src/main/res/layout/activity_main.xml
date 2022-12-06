@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#515151"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:autoText="false"
+        android:background="#3A305E"
+        android:elegantTextHeight="false"
+        android:freezesText="false"
+        android:text="TRUQUINHO"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#FBFBFB"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/bt_Regras"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="Regras"
+        app:layout_constraintEnd_toEndOf="@+id/bt_Partida"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bt_Partida"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/bt_Partida"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Partida"
+        app:layout_constraintEnd_toEndOf="@+id/bt_NovaPartida"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bt_NovaPartida"
+        app:layout_constraintTop_toBottomOf="@+id/bt_NovaPartida" />
+
+    <Button
+        android:id="@+id/bt_NovaPartida"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Nova Partida"
+        app:layout_constraintTop_toBottomOf="@+id/bt_Regras"
+        tools:layout_editor_absoluteX="131dp" />
+
+    <Button
+        android:id="@+id/bt_Opcao"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Opções"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_Partida" />
+</androidx.constraintlayout.widget.ConstraintLayout>

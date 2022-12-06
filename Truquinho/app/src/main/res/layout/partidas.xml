@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#515151"
+    android:textAlignment="gravity"
+    tools:context=".Partidas">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:autoSizeTextType="none"
+        android:autoText="false"
+        android:background="#3A305E"
+        android:freezesText="false"
+        android:text="PARTIDAS"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#FBFBFB"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/pesquisa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="Pesquisar"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="127dp" />
+
+    <EditText
+        android:id="@+id/editTextNumberSigned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toStartOf="@+id/pesquisa"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumberSigned"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumberSigned"
+        tools:layout_editor_absoluteY="175dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
