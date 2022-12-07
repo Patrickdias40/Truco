@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Truquinho">
         <activity
+            android:name=".Historico"
+            android:exported="false" />
+        <activity
             android:name=".Nova_Partida"
             android:exported="false" />
         <activity
