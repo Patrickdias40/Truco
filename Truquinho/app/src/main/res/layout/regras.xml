@@ -23,4 +23,51 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="649dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Truco - Disputa para aumentar o valor da “mão” para 2\n Re-truco - Disputa para aumentar o valor da “mão” para 3\n Vale 4 - Disputa para aumentar o valor da “mão” para 4"
+                android:layout_margin="10dp"
+                android:width="1000dp"
+                />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flor - Tipo especial de Envido em que o jogador deve ter 3 cartas do mesmo naipe. É possível aumentar o valor da mão em 3 pontos.\n
+Contra-flor - Uma das possíveis respostas ao pedido de Flor. Pode aumentar o valor da mão em 6 pontos. (Em algumas situações o valor pode ser maior)\n
+Contra-flor e o resto - Disputa similar a Contra-flor que pode aumentar o valor da mão para a diferença entre o placar final do jogo e os pontos da pessoa que está ganhando, além dos pontos da Contra-flor. (Em algumas situações o valor pode ser maior)"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/textVie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/textVi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_margin="10dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

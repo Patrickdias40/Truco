@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        regras = findViewById(R.id.bt_Regras);
-        partidas = findViewById(R.id.bt_Partida);
+        regras = findViewById(R.id.bt_regras);
+        partidas = findViewById(R.id.bt_partida);
         rapida = findViewById(R.id.rapida);
 
         regras.setOnClickListener(new View.OnClickListener() {

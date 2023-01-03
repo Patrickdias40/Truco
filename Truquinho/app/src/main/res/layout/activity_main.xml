@@ -25,26 +25,25 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/bt_Regras"
+        android:id="@+id/bt_regras"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Regras"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/bt_regras"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/bt_Partida"
+        android:id="@+id/bt_partida"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="PARTIDAS"
-        app:layout_constraintEnd_toEndOf="@+id/bt_Regras"
+        android:text="@string/bt_partida"
+        app:layout_constraintEnd_toEndOf="@+id/bt_regras"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/bt_Regras"
-        app:layout_constraintTop_toBottomOf="@+id/bt_Regras" />
+        app:layout_constraintStart_toStartOf="@+id/bt_regras"
+        app:layout_constraintTop_toBottomOf="@+id/bt_regras" />
 
     <ImageView
         android:id="@+id/imageView"

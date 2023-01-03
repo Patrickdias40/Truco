@@ -23,98 +23,98 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
-    <TextView
-        android:id="@+id/nos"
+    <Button
+        android:id="@+id/menos_eles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Nós"
+        android:layout_marginTop="36dp"
+        android:text="-"
         android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/eles"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        />
+        app:layout_constraintEnd_toEndOf="@id/eles"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@id/eles"
+        app:layout_constraintTop_toBottomOf="@id/mais_eles" />
 
     <TextView
         android:id="@+id/eles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="52dp"
         android:text="Eles"
         android:textSize="36sp"
-        app:layout_constraintStart_toEndOf="@id/nos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        />
-
-    <TextView
-        android:id="@+id/pontos_nos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="XX"
-        android:textSize="64sp"
-        app:layout_constraintTop_toBottomOf="@id/nos"
-        app:layout_constraintStart_toStartOf="@id/nos"
-        app:layout_constraintEnd_toEndOf="@id/nos"
-        />
-
-    <TextView
-        android:id="@+id/pontos_eles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="XX"
-        android:textSize="64sp"
-        app:layout_constraintTop_toBottomOf="@id/eles"
-        app:layout_constraintEnd_toEndOf="@id/eles"
-        app:layout_constraintStart_toStartOf="@id/eles"
-        />
+        app:layout_constraintStart_toEndOf="@id/nos"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Button
         android:id="@+id/mais_nos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/pontos_nos"
+        android:layout_marginTop="16dp"
         android:text="+"
         android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="@id/nos"
         app:layout_constraintEnd_toEndOf="@id/nos"
-        android:layout_marginTop="30dp"
-        />
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@id/nos"
+        app:layout_constraintTop_toBottomOf="@id/pontos_nos" />
 
-    <Button
-        android:id="@+id/mais_eles"
+    <TextView
+        android:id="@+id/nos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/pontos_eles"
-        android:text="+"
+        android:layout_marginTop="52dp"
+        android:text="Nós"
         android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="@id/eles"
+        app:layout_constraintEnd_toStartOf="@+id/eles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/pontos_eles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="XX"
+        android:textSize="64sp"
         app:layout_constraintEnd_toEndOf="@id/eles"
-        android:layout_marginTop="30dp"
-        />
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@id/eles"
+        app:layout_constraintTop_toBottomOf="@id/eles" />
 
     <Button
         android:id="@+id/menos_nos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/mais_nos"
+        android:layout_marginTop="36dp"
         android:text="-"
         android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="@id/nos"
         app:layout_constraintEnd_toEndOf="@id/nos"
-        android:layout_marginTop="30dp"
-        />
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@id/nos"
+        app:layout_constraintTop_toBottomOf="@id/mais_nos" />
 
     <Button
-        android:id="@+id/menos_eles"
+        android:id="@+id/mais_eles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/mais_eles"
-        android:text="-"
+        android:layout_marginTop="16dp"
+        android:text="+"
         android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="@id/eles"
         app:layout_constraintEnd_toEndOf="@id/eles"
-        android:layout_marginTop="30dp"
-        />
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@id/eles"
+        app:layout_constraintTop_toBottomOf="@id/pontos_eles" />
+
+    <TextView
+        android:id="@+id/pontos_nos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="XX"
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="@id/nos"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="@id/nos"
+        app:layout_constraintTop_toBottomOf="@id/nos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

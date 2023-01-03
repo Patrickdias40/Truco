@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Truquinho</string>
+    <string name="bt_novaPartida"> Criar Partida </string>
+    <string name="bt_pesquisar"> Pesquisar </string>
+    <string name="id"> ID </string>
+    <string name="bt_partida"> Partidas </string>
+    <string name="bt_regras"> Regras </string>
+    <string name="textNome"> Nome </string>
 </resources>

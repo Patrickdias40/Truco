@@ -24,42 +24,65 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_pesquisar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
         android:text="PESQUISAR"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberSigned"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.433"
-        tools:layout_editor_absoluteX="260dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/editIdPesquisar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editNomePesquisar"
+        app:layout_constraintTop_toTopOf="@+id/editNomePesquisar"
+        app:layout_constraintVertical_bias="0.492" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned"
+        android:id="@+id/editIdPesquisar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
+        android:text="@string/id"
+        android:textAlignment="center"
         android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        tools:layout_editor_absoluteY="169dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="113dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editNomePesquisar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editNomePesquisar"
+        app:layout_constraintTop_toBottomOf="@+id/editNomePesquisar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned">
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@+id/editIdPesquisar"
+        tools:layout_editor_absoluteX="0dp">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/bt_novaPartida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/bt_novaPartida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <EditText
+        android:id="@+id/editNomePesquisar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="@string/textNome"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_novaPartida"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
