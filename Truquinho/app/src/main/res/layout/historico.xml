@@ -11,7 +11,6 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:autoText="false"
         android:background="#3A305E"
         android:elegantTextHeight="false"
         android:freezesText="false"
@@ -28,13 +27,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:text="PESQUISAR"
-        app:layout_constraintBottom_toBottomOf="@+id/editIdPesquisar"
+        android:text="@string/pesquisar"
+        app:layout_constraintBottom_toBottomOf="@+id/editNomePesquisar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/editNomePesquisar"
         app:layout_constraintTop_toTopOf="@+id/editNomePesquisar"
-        app:layout_constraintVertical_bias="0.492" />
+        />
+
+    <Button
+        android:id="@+id/bt_selecionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/selecionar"
+        app:layout_constraintBottom_toBottomOf="@+id/editIdPesquisar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editIdPesquisar"
+        app:layout_constraintTop_toTopOf="@+id/editIdPesquisar"
+        />
 
     <EditText
         android:id="@+id/editIdPesquisar"
@@ -42,22 +52,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:text="@string/id"
+        android:hint="@string/id"
         android:textAlignment="center"
         android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="@+id/editNomePesquisar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editNomePesquisar"
         app:layout_constraintTop_toBottomOf="@+id/editNomePesquisar" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/editIdPesquisar"
-        tools:layout_editor_absoluteX="0dp">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/bt_novaPartida"
@@ -78,11 +79,26 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="@string/textNome"
+        android:hint="@string/textNome"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_novaPartida"
         tools:ignore="MissingConstraints" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/editIdPesquisar"
+        tools:context=".Historico">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@android:layout/simple_list_item_1" />
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

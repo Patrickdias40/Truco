@@ -17,6 +17,7 @@ public class Partidas extends AppCompatActivity {
 
     String nome = "teste";
 
+    TextView titulo;
     TextView texto_nos;
     TextView texto_eles;
 
@@ -32,6 +33,7 @@ public class Partidas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.partidas);
+        titulo = findViewById(R.id.title);
         texto_nos = findViewById(R.id.pontos_nos);
         texto_eles = findViewById(R.id.pontos_eles);
         mais_nos = findViewById(R.id.mais_nos);
@@ -42,6 +44,7 @@ public class Partidas extends AppCompatActivity {
         bt_salvar = findViewById(R.id.bt_salvar);
         bt_sair = findViewById(R.id.bt_sair);
 
+        titulo.setText(nome);
         texto_nos.setText(String.valueOf(pontos_nos));
         texto_eles.setText(String.valueOf(pontos_eles));
 

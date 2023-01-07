@@ -1,7 +1,9 @@
 package com.example.truquinho;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -9,6 +11,9 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class sqlHelper extends SQLiteOpenHelper { //precisar criar os dois métodos
 
@@ -37,6 +42,67 @@ public class sqlHelper extends SQLiteOpenHelper { //precisar criar os dois méto
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { //executa quando esta atualizando...
 
     }
+    //busca
+    @SuppressLint("Range")
+    List<Registro> getRegistro(String valor){
+
+        List<Registro> registros = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        //Cursor cursor = db.rawQuery("Select * from agenda where disciplina = ?",new String[]{valor});
+        Cursor cursor = db.rawQuery("Select * from partidas",null);
+
+        try{
+            if(cursor.moveToFirst()){
+                do{
+                    Registro registro = new Registro();
+                    registro.id = cursor.getInt(cursor.getColumnIndex("id"));
+                    registro.nome = cursor.getString(cursor.getColumnIndex("nome"));
+                    registro.pt_maxima = cursor.getInt(cursor.getColumnIndex("pt_maxima"));
+                    registro.pt_nos = cursor.getInt(cursor.getColumnIndex("pt_nos"));
+                    registro.pt_eles = cursor.getInt(cursor.getColumnIndex("pt_eles"));
+
+                    registros.add(registro);
+                }while(cursor.moveToNext());
+            }
+        } catch (Exception e) {
+        } finally {
+            if (cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return registros;
+    }//busca
+
+    @SuppressLint("Range")
+    List<Registro> getRegistroPesquisa(String valor, String nome){
+
+        List<Registro> registros = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        //Cursor cursor = db.rawQuery("Select * from agenda where disciplina = ?",new String[]{valor});
+        Cursor cursor = db.rawQuery("Select * from partidas where nome='"+nome+"'",null);
+
+        try{
+            if(cursor.moveToFirst()){
+                do{
+                    Registro registro = new Registro();
+                    registro.id = cursor.getInt(cursor.getColumnIndex("id"));
+                    registro.nome = cursor.getString(cursor.getColumnIndex("nome"));
+                    registro.pt_maxima = cursor.getInt(cursor.getColumnIndex("pt_maxima"));
+                    registro.pt_nos = cursor.getInt(cursor.getColumnIndex("pt_nos"));
+                    registro.pt_eles = cursor.getInt(cursor.getColumnIndex("pt_eles"));
+
+                    registros.add(registro);
+                }while(cursor.moveToNext());
+            }
+        } catch (Exception e) {
+        } finally {
+            if (cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return registros;
+    }
+
+
+
     //-----------------------------------------------------------------------
     long addPartida(String valor1, Integer valor2, Integer valor3, Integer valor4){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase(); //usamos writable ou readable
@@ -54,6 +120,7 @@ public class sqlHelper extends SQLiteOpenHelper { //precisar criar os dois méto
             sqLiteDatabase.setTransactionSuccessful();
         } catch (Exception e){
             Log.e("sqllite",e.getMessage(),e);
+            Log.d("erro_sql", "deu pau");
 
         } finally {
             sqLiteDatabase.endTransaction();

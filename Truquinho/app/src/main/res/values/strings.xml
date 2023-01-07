@@ -8,4 +8,7 @@
     <string name="textNome"> Nome </string>
     <string name="bt_salvar">Salvar e sair</string>
     <string name="salvo">Dados foram salvos no banco.</string>
+    <string name="historico">HISTORICO</string>
+    <string name="pesquisar">PESQUISAR</string>
+    <string name="selecionar">SELECIONAR</string>
 </resources>
