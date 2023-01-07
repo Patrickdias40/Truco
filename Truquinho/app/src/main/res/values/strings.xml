@@ -6,4 +6,6 @@
     <string name="bt_partida"> Partidas </string>
     <string name="bt_regras"> Regras </string>
     <string name="textNome"> Nome </string>
+    <string name="bt_salvar">Salvar e sair</string>
+    <string name="salvo">Dados foram salvos no banco.</string>
 </resources>
