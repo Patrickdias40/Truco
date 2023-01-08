@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         regras = findViewById(R.id.bt_regras);
         partidas = findViewById(R.id.bt_partida);
-        rapida = findViewById(R.id.rapida);
+        rapida = findViewById(R.id.bt_rapida);
 
         regras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Partidas.class);
+                intent.putExtra("id", -1);
+                intent.putExtra("valor", "Portugues");
                 startActivity(intent);
             }
         });

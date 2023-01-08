@@ -1,23 +1,30 @@
 package com.example.truquinho;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class Historico extends AppCompatActivity {
     Button bt_pesquisar;
     Button bt_selecionar;
+    Button bt_criar;
+    Button bt_remover;
     EditText edit_nome;
     EditText edit_id;
     String nome;
@@ -31,10 +38,15 @@ public class Historico extends AppCompatActivity {
 
         bt_pesquisar = findViewById(R.id.bt_pesquisar);
         bt_selecionar = findViewById(R.id.bt_selecionar);
+        bt_criar = findViewById(R.id.bt_novaPartida);
+        bt_remover = findViewById(R.id.bt_remover);
         edit_id = findViewById(R.id.editIdPesquisar);
         edit_nome = findViewById(R.id.editNomePesquisar);
 
         bt_pesquisar.setOnClickListener(this::pesquisar);
+        bt_selecionar.setOnClickListener(this::selecionar);
+        bt_criar.setOnClickListener(this::criar);
+        bt_remover.setOnClickListener(this::remover);
 
         recyclerView = findViewById(R.id.lista);
 
@@ -43,11 +55,16 @@ public class Historico extends AppCompatActivity {
             String valor = extras.getString("valor");
 
             List<Registro> registros = sqlHelper.getInstance(this).getRegistro(valor);
-            // Log.d("teste", registros.toString());
+            Log.d("teste", registros.toString());
             ListaValores adapter = new ListaValores(registros);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(adapter);
         }
+    }
+
+    public void criar(View view){
+        Intent intent = new Intent(Historico.this, Nova_Partida.class);
+        startActivity(intent);
     }
 
     public void pesquisar(View view){
@@ -66,7 +83,28 @@ public class Historico extends AppCompatActivity {
 
     public void selecionar(View view){
         id = Integer.parseInt(edit_id.getText().toString());
+        Intent intent = new Intent(Historico.this, Partidas.class);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
+
+    public void remover(View view){
+        Bundle extras = getIntent().getExtras(); //buscando da tela anteriores valores enviados por chave-valor
+        if (extras != null) {
+            String valor = extras.getString("valor");
+            id = Integer.parseInt(edit_id.getText().toString());
+            long id_banco = sqlHelper.getInstance(this).removePartida(id);
+            if (id_banco > 0) {
+                Toast.makeText(Historico.this, R.string.salvo, Toast.LENGTH_LONG).show();
+            }
+            List<Registro> registros = sqlHelper.getInstance(this).getRegistro(valor);
+            // Log.d("teste", registros.toString());
+            ListaValores adapter = new ListaValores(registros);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(adapter);
+        }
+    }
+
 
     private class ListaValores extends RecyclerView.Adapter<ListaValores.ListaValoresViewHolder>{
 

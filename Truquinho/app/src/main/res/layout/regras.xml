@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#515151"
-    tools:context=".Regras">
+    tools:context=".Regras"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:autoText="false"
         android:background="#3A305E"
         android:elegantTextHeight="false"
         android:freezesText="false"
-        android:text="REGRAS"
+        android:text="@string/regras"
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="#FBFBFB"
         android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
     <ScrollView
@@ -53,21 +51,8 @@ Contra-flor - Uma das possíveis respostas ao pedido de Flor. Pode aumentar o va
 Contra-flor e o resto - Disputa similar a Contra-flor que pode aumentar o valor da mão para a diferença entre o placar final do jogo e os pontos da pessoa que está ganhando, além dos pontos da Contra-flor. (Em algumas situações o valor pode ser maior)"
                 android:layout_margin="10dp" />
 
-            <TextView
-                android:id="@+id/textVie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:layout_margin="10dp" />
-
-            <TextView
-                android:id="@+id/textVi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:layout_margin="10dp" />
         </LinearLayout>
 
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

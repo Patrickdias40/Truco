@@ -1,14 +1,24 @@
 <resources>
     <string name="app_name">Truquinho</string>
-    <string name="bt_novaPartida"> Criar Partida </string>
-    <string name="bt_pesquisar"> Pesquisar </string>
-    <string name="id"> ID </string>
-    <string name="bt_partida"> Partidas </string>
-    <string name="bt_regras"> Regras </string>
-    <string name="textNome"> Nome </string>
+    <string name="bt_novaPartida">Criar Partida</string>
+    <string name="bt_pesquisar">Pesquisar</string>
+    <string name="id">ID</string>
+    <string name="bt_partida">Partidas</string>
+    <string name="bt_regras">Regras</string>
+    <string name="textNome">Nome</string>
+    <string name="textPontos">Pontos</string>
     <string name="bt_salvar">Salvar e sair</string>
     <string name="salvo">Dados foram salvos no banco.</string>
     <string name="historico">HISTORICO</string>
     <string name="pesquisar">PESQUISAR</string>
     <string name="selecionar">SELECIONAR</string>
+    <string name="edit_nome">Digite o nome</string>
+    <string name="edit_pontos">Pontuação máxima</string>
+    <string name="erro">Ops, ocorreu um erro.</string>
+    <string name="regras">REGRAS</string>
+    <string name="remover">REMOVER</string>
+    <string name="truquinho">TRUQUINHO</string>
+    <string name="bt_partidaRapida">Partida Rápida</string>
+    <string name="parabens">Parabéns!</string>
+    <string name="ok">OK</string>
 </resources>

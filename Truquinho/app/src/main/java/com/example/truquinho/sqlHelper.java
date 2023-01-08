@@ -100,6 +100,32 @@ public class sqlHelper extends SQLiteOpenHelper { //precisar criar os dois méto
         }
         return registros;
     }
+    @SuppressLint("Range")
+    Registro getRegistroUnico(String valor, int id){
+
+        Registro registro = new Registro();
+        SQLiteDatabase db = getReadableDatabase();
+        //Cursor cursor = db.rawQuery("Select * from agenda where disciplina = ?",new String[]{valor});
+        Cursor cursor = db.rawQuery("Select * from partidas where id='"+id+"'",null);
+
+        try{
+            if(cursor.moveToFirst()){
+                do{
+                    registro.id = cursor.getInt(cursor.getColumnIndex("id"));
+                    registro.nome = cursor.getString(cursor.getColumnIndex("nome"));
+                    registro.pt_maxima = cursor.getInt(cursor.getColumnIndex("pt_maxima"));
+                    registro.pt_nos = cursor.getInt(cursor.getColumnIndex("pt_nos"));
+                    registro.pt_eles = cursor.getInt(cursor.getColumnIndex("pt_eles"));
+
+                }while(cursor.moveToNext());
+            }
+        } catch (Exception e) {
+        } finally {
+            if (cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return registro;
+    }
 
 
 
@@ -126,6 +152,49 @@ public class sqlHelper extends SQLiteOpenHelper { //precisar criar os dois méto
             sqLiteDatabase.endTransaction();
         }
         return idbanco;
+
+    }
+    long replacePartida(Integer valorid, String valor1, Integer valor2, Integer valor3, Integer valor4){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase(); //usamos writable ou readable
+        // precisa porque podemos gerar erro ao adicionar dados...
+
+        long idbanco = 0;
+        try{
+            sqLiteDatabase.beginTransaction();
+            ContentValues valores = new ContentValues();
+            valores.put("id", valorid);
+            valores.put("nome", valor1);
+            valores.put("pt_maxima",valor2);
+            valores.put("pt_nos",valor3);
+            valores.put("pt_eles",valor4);
+            idbanco = sqLiteDatabase.replaceOrThrow("partidas",null,valores);
+            sqLiteDatabase.setTransactionSuccessful();
+        } catch (Exception e){
+            Log.e("sqllite",e.getMessage(),e);
+            Log.d("erro_sql", "deu pau");
+
+        } finally {
+            sqLiteDatabase.endTransaction();
+        }
+        return idbanco;
+
+    }
+    long removePartida(Integer valorid){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase(); //usamos writable ou readable
+        // precisa porque podemos gerar erro ao adicionar dados...
+        long id_banco = 0;
+        try{
+            sqLiteDatabase.beginTransaction();
+            sqLiteDatabase.execSQL("DELETE from partidas where id="+valorid+"");
+            sqLiteDatabase.setTransactionSuccessful();
+            id_banco = 1;
+        } catch (Exception e){
+            Log.e("sqllite",e.getMessage(),e);
+            Log.d("erro_sql", "deu pau");
+        } finally {
+            sqLiteDatabase.endTransaction();
+        }
+        return id_banco;
 
     }
 
