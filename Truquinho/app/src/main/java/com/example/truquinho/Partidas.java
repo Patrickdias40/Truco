@@ -91,7 +91,7 @@ public class Partidas extends AppCompatActivity {
     public void adiciona_nos(View view){
         if (pt_maxima > 0){
             if (pontos_nos >= pt_maxima){
-                AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
 
                 dialog.setTitle(getString(R.string.parabens));
                 dialog.setMessage("A partida alcançou o número máximo de pontos.");
@@ -115,7 +115,7 @@ public class Partidas extends AppCompatActivity {
     public void adiciona_eles(View view){
         if (pt_maxima > 0){
             if (pontos_eles >= pt_maxima){
-                AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
 
                 dialog.setTitle(R.string.parabens);
                 dialog.setMessage("A partida alcançou o número máximo de pontos.");

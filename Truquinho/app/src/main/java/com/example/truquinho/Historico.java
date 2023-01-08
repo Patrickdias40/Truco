@@ -89,22 +89,38 @@ public class Historico extends AppCompatActivity {
     }
 
     public void remover(View view){
-        Bundle extras = getIntent().getExtras(); //buscando da tela anteriores valores enviados por chave-valor
-        if (extras != null) {
-            String valor = extras.getString("valor");
-            id = Integer.parseInt(edit_id.getText().toString());
-            long id_banco = sqlHelper.getInstance(this).removePartida(id);
-            if (id_banco > 0) {
-                Toast.makeText(Historico.this, R.string.salvo, Toast.LENGTH_LONG).show();
-            }
-            List<Registro> registros = sqlHelper.getInstance(this).getRegistro(valor);
-            // Log.d("teste", registros.toString());
-            ListaValores adapter = new ListaValores(registros);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            recyclerView.setAdapter(adapter);
-        }
-    }
+        AlertDialog.Builder dialog = new AlertDialog.Builder(Historico.this, R.style.CustomDialogTheme);
 
+        dialog.setTitle(getString(R.string.remover));
+        dialog.setMessage("Você tem certeza de que quer apagar essa partida?");
+
+        dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Bundle extras = getIntent().getExtras(); //buscando da tela anteriores valores enviados por chave-valor
+                if (extras != null) {
+                    String valor = extras.getString("valor");
+                    id = Integer.parseInt(edit_id.getText().toString());
+                    long id_banco = sqlHelper.getInstance(Historico.this).removePartida(id);
+                    if (id_banco > 0) {
+                        Toast.makeText(Historico.this, R.string.salvo, Toast.LENGTH_LONG).show();
+                    }
+                    List<Registro> registros = sqlHelper.getInstance(Historico.this).getRegistro(valor);
+                    // Log.d("teste", registros.toString());
+                    ListaValores adapter = new ListaValores(registros);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(Historico.this));
+                    recyclerView.setAdapter(adapter);
+                }
+            }
+        });
+        dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        dialog.create();
+        dialog.show();
+    }
 
     private class ListaValores extends RecyclerView.Adapter<ListaValores.ListaValoresViewHolder>{
 
