@@ -154,6 +154,8 @@ public class sqlHelper extends SQLiteOpenHelper { //precisar criar os dois méto
     }
 
 
+
+
     //-----------------------------------------------------------------------
     long addPartida(String valor1, Integer valor2, Integer valor3, Integer valor4){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase(); //usamos writable ou readable
