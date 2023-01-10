@@ -22,8 +22,8 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="649dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="80dp"
         tools:ignore="MissingConstraints">
@@ -43,13 +43,42 @@
                 />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Envido - Disputa paralela que ocorre durante a primeira rodada de uma mão para aumentar seu valor em até 2 pontos.
+\nReal Envido - Similar ao Envido, mas pode aumentar o valor da mão em até 5 pontos.
+\nFalta Envido - Similar ao Envido, mas pode aumentar o valor da mão para a diferença entre o placar final do jogo e os pontos da pessoa que está ganhando."
+                android:layout_margin="10dp"/>
+
+            <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flor - Tipo especial de Envido em que o jogador deve ter 3 cartas do mesmo naipe. É possível aumentar o valor da mão em 3 pontos.\n
-Contra-flor - Uma das possíveis respostas ao pedido de Flor. Pode aumentar o valor da mão em 6 pontos. (Em algumas situações o valor pode ser maior)\n
-Contra-flor e o resto - Disputa similar a Contra-flor que pode aumentar o valor da mão para a diferença entre o placar final do jogo e os pontos da pessoa que está ganhando, além dos pontos da Contra-flor. (Em algumas situações o valor pode ser maior)"
+                android:text="Flor - Tipo especial de Envido em que o jogador deve ter 3 cartas do mesmo naipe. É possível aumentar o valor da mão em 3 pontos.
+\nContra-flor - Uma das possíveis respostas ao pedido de Flor. Pode aumentar o valor da mão em 6 pontos. (Em algumas situações o valor pode ser maior)
+\nContra-flor e o resto - Disputa similar a Contra-flor que pode aumentar o valor da mão para a diferença entre o placar final do jogo e os pontos da pessoa que está ganhando, além dos pontos da Contra-flor. (Em algumas situações o valor pode ser maior)"
                 android:layout_margin="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="ORDEM DAS CARTAS:
+\n1 de Espadas
+\n1 de Paus
+\n7 de Espadas
+\n7 de Ouros
+\n3
+\n2
+\n1 (Ouros ou Copas)
+\n12
+\n11
+\n10
+\n7 (Paus ou Copas)
+\n6
+\n5
+\n4"
+                />
 
         </LinearLayout>
 

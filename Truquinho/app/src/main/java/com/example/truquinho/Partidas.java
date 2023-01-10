@@ -2,6 +2,7 @@ package com.example.truquinho;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class Partidas extends AppCompatActivity {
     String valor;
@@ -91,6 +94,7 @@ public class Partidas extends AppCompatActivity {
         menos_nos.setOnClickListener(this::retira_nos);
         menos_eles.setOnClickListener(this::retira_eles);
         bt_salvar.setOnClickListener(this::salva_e_sai);
+        bt_sair.setOnClickListener(this::sai_sem_salvar);
     }
     public void adiciona_nos(View view){
         AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
@@ -166,13 +170,40 @@ public class Partidas extends AppCompatActivity {
         long id_banco;
         if (id == 0){
             id_banco = com.example.truquinho.sqlHelper.getInstance(Partidas.this).addPartida(nome, pt_maxima, pontos_nos, pontos_eles);
-        } else {
+        } else if (id > 0){
             id_banco = com.example.truquinho.sqlHelper.getInstance(Partidas.this).replacePartida(id, nome, pt_maxima, pontos_nos, pontos_eles);
+        } else {
+            id_banco = 0;
         }
         if (id_banco > 0) {
             Toast.makeText(Partidas.this, R.string.salvo, Toast.LENGTH_LONG).show();
         }
         Intent intent = new Intent(Partidas.this, MainActivity.class);
         startActivity(intent);
+    }
+    public void sai_sem_salvar(View view) {
+        if (id >= 0) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
+            dialog.setTitle(R.string.sair_sem_salvar);
+            dialog.setMessage("Tem certeza?");
+
+            dialog.setNegativeButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent intent = new Intent(Partidas.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            });
+            dialog.setPositiveButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                }
+            });
+            dialog.create();
+            dialog.show();
+        } else {
+            Intent intent = new Intent(Partidas.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 }
