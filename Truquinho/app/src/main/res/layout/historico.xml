@@ -40,10 +40,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:text="@string/selecionar"
-        app:layout_constraintBottom_toBottomOf="@+id/editIdPesquisar"
+        app:layout_constraintBottom_toTopOf="@+id/bt_remover"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editIdPesquisar"
-        app:layout_constraintTop_toTopOf="@+id/editIdPesquisar"
+        app:layout_constraintTop_toBottomOf="@+id/bt_pesquisar"
+        android:layout_marginTop="20dp"
         />
 
     <Button
@@ -64,7 +65,6 @@
         android:id="@+id/editIdPesquisar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/id"
         android:textAlignment="center"
@@ -72,7 +72,9 @@
         app:layout_constraintEnd_toEndOf="@+id/editNomePesquisar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editNomePesquisar"
-        app:layout_constraintTop_toBottomOf="@+id/editNomePesquisar" />
+        app:layout_constraintTop_toTopOf="@+id/bt_selecionar"
+        app:layout_constraintBottom_toBottomOf="@id/bt_remover"
+        />
 
     <Button
         android:id="@+id/bt_novaPartida"

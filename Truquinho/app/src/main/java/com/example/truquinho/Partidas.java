@@ -39,8 +39,12 @@ public class Partidas extends AppCompatActivity {
         setContentView(R.layout.partidas);
 
         Bundle extras = getIntent().getExtras();
-        id = extras.getInt("id", 0);
-        valor = extras.getString("valor", "Portugues");
+        if (extras != null) {
+            id = extras.getInt("id", 0);
+            valor = extras.getString("valor", "Portugues");
+        } else {
+            Toast.makeText(Partidas.this, R.string.erro, Toast.LENGTH_SHORT).show();
+        }
 
         if (id > 0){
             Registro registro = new Registro();
@@ -89,23 +93,26 @@ public class Partidas extends AppCompatActivity {
         bt_salvar.setOnClickListener(this::salva_e_sai);
     }
     public void adiciona_nos(View view){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
+
+        dialog.setTitle(getString(R.string.parabens));
+        dialog.setMessage("A partida alcançou o número máximo de pontos.");
+
+        dialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        dialog.create();
         if (pt_maxima > 0){
             if (pontos_nos >= pt_maxima){
-                AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
-
-                dialog.setTitle(getString(R.string.parabens));
-                dialog.setMessage("A partida alcançou o número máximo de pontos.");
-
-                dialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-                dialog.create();
                 dialog.show();
             } else {
                 pontos_nos += 1;
                 texto_nos.setText(String.valueOf(pontos_nos));
+                if (pontos_nos == pt_maxima){
+                    dialog.show();
+                }
             }
         } else {
             pontos_nos += 1;
@@ -113,23 +120,26 @@ public class Partidas extends AppCompatActivity {
         }
     }
     public void adiciona_eles(View view){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
+
+        dialog.setTitle(R.string.parabens);
+        dialog.setMessage("A partida alcançou o número máximo de pontos.");
+
+        dialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        dialog.create();
         if (pt_maxima > 0){
             if (pontos_eles >= pt_maxima){
-                AlertDialog.Builder dialog = new AlertDialog.Builder(Partidas.this, R.style.CustomDialogTheme);
-
-                dialog.setTitle(R.string.parabens);
-                dialog.setMessage("A partida alcançou o número máximo de pontos.");
-
-                dialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-                dialog.create();
                 dialog.show();
             } else {
                 pontos_eles += 1;
                 texto_eles.setText(String.valueOf(pontos_eles));
+                if (pontos_eles == pt_maxima){
+                    dialog.show();
+                }
             }
         } else {
             pontos_eles += 1;
@@ -147,7 +157,7 @@ public class Partidas extends AppCompatActivity {
     public void retira_eles(View view){
         if (pontos_eles > 0) {
             pontos_eles -= 1;
-            texto_eles.setText(String.valueOf(pontos_nos));
+            texto_eles.setText(String.valueOf(pontos_eles));
         } else {
             Toast.makeText(Partidas.this, "Pontuação já é 0", Toast.LENGTH_SHORT).show();
         }

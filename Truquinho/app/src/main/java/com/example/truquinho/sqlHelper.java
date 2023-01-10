@@ -127,6 +127,31 @@ public class sqlHelper extends SQLiteOpenHelper { //precisar criar os dois méto
         return registro;
     }
 
+    @SuppressLint("Range")
+    boolean checkID(String valor, int id){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM partidas WHERE id='"+id+"'", null);
+        boolean check = false;
+        try{
+            if(cursor.moveToFirst()){
+                int id2 = 0;
+                do{
+                    id2 = cursor.getInt(cursor.getColumnIndex("id"));
+                }while(cursor.moveToNext());
+                if (id2 == id){
+                    cursor.close();
+                    check = true;
+                } else {
+                    check = false;
+                }
+            }
+        } catch (Exception e) {
+        } finally {
+            if (cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return check;
+    }
 
 
     //-----------------------------------------------------------------------

@@ -82,10 +82,21 @@ public class Historico extends AppCompatActivity {
     }
 
     public void selecionar(View view){
-        id = Integer.parseInt(edit_id.getText().toString());
-        Intent intent = new Intent(Historico.this, Partidas.class);
-        intent.putExtra("id", id);
-        startActivity(intent);
+        if (!edit_id.getText().toString().equals("")){
+            Bundle extras = getIntent().getExtras(); //buscando da tela anteriores valores enviados por chave-valor
+            if (extras != null) {
+                String valor = extras.getString("valor");
+                id = Integer.parseInt(edit_id.getText().toString());
+                boolean check = sqlHelper.getInstance(this).checkID(valor, id);
+                if (check) {
+                   Intent intent = new Intent(Historico.this, Partidas.class);
+                   intent.putExtra("id", id);
+                   startActivity(intent);
+                } else {
+                    Toast.makeText(Historico.this, R.string.erro, Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     public void remover(View view){
@@ -94,7 +105,7 @@ public class Historico extends AppCompatActivity {
         dialog.setTitle(getString(R.string.remover));
         dialog.setMessage("Você tem certeza de que quer apagar essa partida?");
 
-        dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+        dialog.setNegativeButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Bundle extras = getIntent().getExtras(); //buscando da tela anteriores valores enviados por chave-valor
@@ -113,7 +124,7 @@ public class Historico extends AppCompatActivity {
                 }
             }
         });
-        dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+        dialog.setPositiveButton("Não", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
             }
