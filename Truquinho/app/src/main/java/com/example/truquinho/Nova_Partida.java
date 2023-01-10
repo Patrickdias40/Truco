@@ -29,7 +29,15 @@ public class Nova_Partida extends AppCompatActivity {
 
     public void novaPartida(View view){
         String nome = editNome.getText().toString();
-        int pt_maxima = Integer.parseInt(editPontos.getText().toString());
+        int pt_maxima = 0;
+        if (nome.equals("")){
+            nome = "Sem nome";
+        }
+        if (editPontos.getText().toString().equals("")){
+            pt_maxima = 0;
+        } else {
+            pt_maxima = Integer.parseInt(editPontos.getText().toString());
+        }
         Intent intent = new Intent(Nova_Partida.this, Partidas.class);
         intent.putExtra("valor", "Portugues");
         intent.putExtra("id", 0);

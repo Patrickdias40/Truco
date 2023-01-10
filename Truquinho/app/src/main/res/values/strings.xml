@@ -22,4 +22,8 @@
     <string name="parabens">Parabéns!</string>
     <string name="ok">OK</string>
     <string name="sair_sem_salvar">Sair sem salvar</string>
+    <string name="campo_vazio">Campo vazio.</string>
+    <string name="remover_partida">Você tem certeza de que quer apagar essa partida?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
 </resources>
