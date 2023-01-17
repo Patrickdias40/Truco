@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#515151"
+    android:background="@color/bg"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
@@ -12,13 +12,13 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#3A305E"
+        android:background="@color/fg"
         android:elegantTextHeight="false"
         android:freezesText="false"
         android:text="@string/truquinho"
         android:textAlignment="center"
         android:gravity="center"
-        android:textColor="#FBFBFB"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />

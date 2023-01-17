@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#515151"
+    android:background="@color/bg"
     android:textAlignment="gravity"
     tools:context=".Partidas">
 
@@ -13,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:autoSizeTextType="none"
-        android:background="#3A305E"
+        android:background="@color/fg"
         android:freezesText="false"
         android:gravity="center"
-        android:text="PARTIDAS"
+        android:text="@string/bt_partida"
         android:textAlignment="center"
-        android:textColor="#FBFBFB"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />

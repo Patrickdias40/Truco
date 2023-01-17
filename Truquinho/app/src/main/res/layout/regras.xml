@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#515151"
+    android:background="@color/bg"
     tools:context=".Regras"
     android:orientation="vertical">
 
@@ -11,13 +11,13 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#3A305E"
+        android:background="@color/fg"
         android:elegantTextHeight="false"
         android:freezesText="false"
         android:text="@string/regras"
         android:textAlignment="center"
         android:gravity="center"
-        android:textColor="#FBFBFB"
+        android:textColor="@color/white"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -37,7 +37,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Truco - Disputa para aumentar o valor da “mão” para 2\n Re-truco - Disputa para aumentar o valor da “mão” para 3\n Vale 4 - Disputa para aumentar o valor da “mão” para 4"
+                android:text="Truco - Disputa para aumentar o valor da “mão” para 2\nRe-truco - Disputa para aumentar o valor da “mão” para 3\nVale 4 - Disputa para aumentar o valor da “mão” para 4"
                 android:layout_margin="10dp"
                 android:width="1000dp"
                 />

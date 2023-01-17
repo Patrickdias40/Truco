@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Truquinho</string>
-    <string name="bt_novaPartida">Criar Partida</string>
-    <string name="bt_pesquisar">Pesquisar</string>
+    <string name="bt_novaPartida">CRIAR PARTIDA</string>
+    <string name="bt_pesquisar">PESQUISAR</string>
     <string name="id">ID</string>
-    <string name="bt_partida">Partidas</string>
-    <string name="bt_regras">Regras</string>
+    <string name="bt_partida">PARTIDAS</string>
+    <string name="bt_regras">REGRAS</string>
     <string name="textNome">Nome</string>
     <string name="textPontos">Pontos</string>
     <string name="bt_salvar">Salvar e sair</string>
@@ -18,7 +18,7 @@
     <string name="regras">REGRAS</string>
     <string name="remover">REMOVER</string>
     <string name="truquinho">TRUQUINHO</string>
-    <string name="bt_partidaRapida">Partida Rápida</string>
+    <string name="bt_partidaRapida">PARTIDA RÁPIDA</string>
     <string name="parabens">Parabéns!</string>
     <string name="ok">OK</string>
     <string name="sair_sem_salvar">Sair sem salvar</string>
